@@ -1,0 +1,45 @@
+:root{--azul:#4f7fae;--azul-osc:#2f4f73;--crema:#fffaf0;--oro:#b99a5b}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;line-height:1.55;color:var(--azul-osc)}
+.cielo{min-height:100dvh;display:grid;place-items:center;padding:clamp(1rem,4vw,3rem) 1rem;overflow:hidden;position:relative;
+  background:radial-gradient(ellipse 60% 18% at 20% 12%,rgba(255,255,255,.85),transparent 70%),radial-gradient(ellipse 50% 14% at 85% 28%,rgba(255,255,255,.7),transparent 70%),linear-gradient(#9ec5ea,#dbeaf7 70%,#f6f9fd)}
+.escena{width:100%;max-width:30rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;animation:aparece .9s ease both;position:relative;z-index:1}
+@keyframes aparece{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.papel{background:var(--crema);padding:clamp(1.25rem,5vw,2.25rem);border-radius:6px;box-shadow:0 18px 40px rgba(40,70,110,.25)}
+.titulo{font-family:'Dancing Script',cursive;font-weight:700;font-size:clamp(2.1rem,8vw,2.9rem);line-height:1.1;color:var(--azul)}
+.firma{font-style:italic}.firma span{font-family:'Dancing Script',cursive;font-size:2rem;color:var(--azul)}
+.pregunta{font-family:'Dancing Script',cursive;font-size:1.8rem;color:var(--azul)}
+.boton{font:inherit;font-weight:600;font-size:1.15rem;color:#fff;background:var(--azul);border:0;border-radius:999px;padding:.75rem 1.8rem;cursor:pointer;text-decoration:none;box-shadow:0 6px 14px rgba(47,79,115,.3);transition:transform .15s,background .2s}
+.boton:hover,.boton:focus-visible{background:var(--azul-osc);transform:translateY(-2px);outline:none}
+.opciones{display:flex;flex-direction:column;align-items:center;gap:.7rem;width:100%}
+.boton.secundario{color:var(--azul-osc);background:transparent;border:1px solid var(--azul)}
+.boton.secundario:hover,.boton.secundario:focus-visible{color:#fff;background:var(--azul-osc)}
+.boton:disabled{cursor:wait;opacity:.65;transform:none}
+.volver{align-self:flex-start;display:inline-flex;align-items:center;gap:.35rem;color:var(--azul-osc);background:transparent;border:0;padding:.2rem .35rem;font:inherit;font-size:1rem;cursor:pointer}
+.volver:hover,.volver:focus-visible{color:var(--azul);outline:none;text-decoration:underline}
+.aviso-respuesta{font-size:.9rem;color:var(--azul);font-style:italic}
+.error-respuesta{font-size:.95rem;color:#a53d4b}
+.polaroid{background:#fff;padding:.5rem .5rem .6rem;box-shadow:0 6px 16px rgba(0,0,0,.2);transform:rotate(var(--rot));width:min(100%,15rem)}
+.polaroid img,.hueco{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#e6eef7}
+.hueco{display:grid;place-items:center;color:var(--azul);font-style:italic}
+.polaroid figcaption{font-family:'Dancing Script',cursive;font-size:1.3rem;margin-top:.3rem}
+.fotos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;justify-content:center;width:100%}
+.fotos .polaroid{width:100%}
+/* sobre */
+.sobre-escena{margin-top:6rem}
+.sobre{position:relative;width:min(86vw,22rem);aspect-ratio:3/2;border:0;background:none;cursor:pointer;perspective:900px;filter:drop-shadow(0 14px 22px rgba(40,70,110,.3))}
+.sobre span{position:absolute;display:block}
+.fondo{inset:0;background:#f1e6cc;border-radius:4px}
+.mini{left:7%;right:7%;top:8%;bottom:6%;background:#fff;z-index:1;transition:transform 1s ease .3s}
+.frente{inset:0;background:#ebdfc0;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);z-index:2}
+.tapa{inset:0 0 auto 0;height:62%;background:#e2d3ae;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease;z-index:3}
+.sello{left:50%;top:55%;width:2.6rem;height:2.6rem;margin:-1.3rem 0 0 -1.3rem;border-radius:50%;background:var(--azul);color:#fff;display:grid!important;place-items:center;z-index:4;font-size:1.3rem;transition:opacity .4s}
+.sobre.abierto .tapa{transform:rotateX(180deg);z-index:0}
+.sobre.abierto .mini{transform:translateY(-38%)}
+.sobre.abierto .sello{opacity:0}
+.pista{font-style:italic;color:var(--azul-osc);animation:pulso 2s ease-in-out infinite}
+@keyframes pulso{50%{opacity:.45}}
+.corazones{position:fixed;inset:0;pointer-events:none;z-index:0}
+.corazones span{position:absolute;bottom:-2rem;color:#e58a9b;animation:sube linear infinite}
+@keyframes sube{to{transform:translateY(-110dvh) rotate(20deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.escena,.pista,.corazones span{animation:none}.mini,.tapa{transition:none}}
