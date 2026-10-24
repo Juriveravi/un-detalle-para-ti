@@ -101,7 +101,7 @@ export default function App() {
           <Volver onClick={() => setEtapa('carta')} />
           <div className="fotos">
             <Foto src={c.fotos.bautizo} alt="Foto del bautizo" rot="-3deg" />
-            <Foto src={c.fotos.grande} alt="Foto actual" rot="3deg" />
+            
           </div>
           <h1 className="titulo">{c.madrina}, ¡me caso!</h1>
           {c.propuesta.map((t, i) => <p key={i}>{t}</p>)}

@@ -15,6 +15,7 @@ export const config = {
   ],
   propuesta: [
     'El 2 de enero me caso, y hay alguien que no puede faltar a mi lado.',
+    'Así como estuviste presente en mi bautizo, quiero que formes parte de esta nueva etapa y de la historia que estoy comenzando.',
     'Quiero que me honres siendo mi testigo, mi madrina de boda.',
   ],
   pregunta: '¿Quieres acompañarme en ese día tan especial?',
